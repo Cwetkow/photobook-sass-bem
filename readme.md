@@ -1,3 +1,3 @@
 <h1>Photobook</h1>
 
-Учебный макет HTML-Academy от ежемесячной email-рассылки
+Макет от ежемесячной email-рассылки HTML-Academy
