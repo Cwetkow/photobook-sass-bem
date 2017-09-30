@@ -1,0 +1,763 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "_mixins/px-to-em"
+@import "sprite"
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=cyrillic,cyrillic-ext')
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+a 
+	text-decoration: none
+	&:hover, &:focus
+		text-decoration: none
+
+ul, li
+	list-style-type: none
+
+html, body
+	height: 100%
+
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	// line-height: 1.75
+	font-family: 'Open Sans', sans-serif
+	font-weight: 400
+	overflow-x: hidden
+	opacity: 1
+
+
+.main-header 
+	position: relative
+	min-width: 420px
+	&__wrapper 
+		margin: 0 auto
+		padding-top: 21px
+		padding-bottom: 21px
+		padding-right: 3%
+		padding-left: 3%
+		max-width: 1200px
+		display: flex
+		justify-content: space-between
+	&__row 
+		display: flex
+		// min-width: 25%
+		align-items: center
+		justify-content: space-between
+		&--left
+			width: 23%
+		&--right
+			width: 27%
+	&__logo 
+		display: block
+		// font-size: 0
+		min-width: 128px
+		height: 19px
+	&__phone 
+		width: 70%
+		margin-right: 23%
+		text-align: center
+		background-color: $gold
+		padding-top: 7px
+		padding-bottom: 9px
+		border-radius: 10px
+		cursor: pointer
+		&-number 
+			// font-family: PFAgoraSansPro, Arial, sans-serif
+			font-size: 1em
+			color: #212121
+			text-decoration: none
+			border-bottom: 1px dashed #212121
+		&:hover .main-header__phone-number 
+			border-bottom: none
+	&__login 
+		display: block
+		margin-top: -1px
+		&:before
+			content: ""
+			display: block
+			+sprite($login-icon)
+
+.promo
+	background: 
+		image: url("../img/main-banner.png")
+		size: cover
+		repeat: no repeat
+		position: center
+	&__wrapper
+		margin: 0 auto
+		padding:
+			left: 3%
+			right: 3%
+			top: 0
+			bottom: 280px
+	&__title
+		text-align: center
+		font-size: em(60)
+		font-weight: 100
+		font-variant: small-caps
+		padding-top: 55px
+		margin: 0
+		line-height: 0.8
+		letter-spacing: 3px
+	&__subtitle
+		font-weight: 400
+		text-align: center
+		font-size: em(24)
+		padding: 0 0 50px
+	&__btn
+		display: block
+		margin: 0 auto
+		width: 30%
+		text-align: center
+		padding: 20px 0
+		font-size: em(26)
+		font-weight: 100
+		color: #212121
+		text-decoration: none
+		text-transform: uppercase
+		border: 1px solid #212121
+		border-radius: 10px
+		&:hover
+			border: 1px solid #FF7100
+			color: #FF7100
+
+.steps
+	&__wrapper
+		margin: 0 auto
+		padding:
+			left: 3%
+			right: 3%
+			top: 55px
+			bottom: 92px
+		max-width: 1079px
+	&__list
+		display: flex
+		justify-content: space-around		
+		margin: 0
+		padding: 0
+		position: relative
+		&::before
+			position: absolute
+			display: block
+			left: 140px
+			top: 65px
+			content: ""
+			width: 75%
+			height: 0
+			border-top: 5px dashed #ffd200
+
+.step
+	display: flex
+	flex-direction: column
+	align-items: center
+	max-width: 140px
+	text-align: center
+	&__icon
+		display: block
+		width: 130px
+		height: 130px
+		margin-bottom: 25px
+		border-radius: 50%
+		border: 5px solid #ffd200
+		background-color: #fff
+		z-index: 2
+		background:
+			image: url("../img/step-download.png")
+			repeat: no-repeat
+			position: center
+		&--design
+			background-image: url("../img/step-design.png")
+		&--pay
+			background-image: url("../img/step-pay.png")
+		&--get
+			background-image: url("../img/step-get.png")
+	&__title
+		font-size: em(24)
+
+.advantage
+	background-color: #f3f0e7
+	&__wrapper
+		max-width: 1079px
+		padding:
+			left: 2%
+			right: 2%
+			top: 1px
+			bottom: 75px
+		margin: 0 auto
+	&__title
+		font-size: em(60)
+		font-weight: 100
+		text-align: center
+		letter-spacing: 4px
+		font-variant: small-caps
+		margin-bottom: 60px
+	&__list
+		display: flex
+		justify-content: space-between
+		padding: 0
+		margin: 0
+		text-align: center
+	&__btn
+		display: block
+		margin: 0 auto
+		max-width: 39%
+		text-align: center
+		font-size: em(26)
+		text-decoration: none
+		text-transform: uppercase
+		font-weight: 100
+		padding: 18px 0
+		margin-top: 80px
+		color: #ffffff
+		background-color: $button
+		letter-spacing: 1px
+		border-radius: 10px
+		transition: All 0.5s ease
+		&:hover
+			background-color: darken($button, 10%)
+		&--info
+			margin-top: 75px
+	&-item
+		display: flex
+		flex-direction: column
+		align-items: center
+		max-width: 267px
+		&__title
+			font:
+				size: em(24)
+			font-weight: 400
+			line-height: 1.25
+		&__text
+			font-size: em(16)
+			line-height: 1.25
+			margin: 0
+
+.solutions
+	&__wrapper
+		max-width: 1079px
+		padding: 
+			top: 70px
+			left: 3%
+			right: 3%
+			bottom: 115px
+		margin: 0 auto
+	&__title
+		font-size: em(60)
+		font-weight: 100
+		font-variant: small-caps
+		letter-spacing: 4px
+		text-align: center
+		margin: 0
+		padding-bottom: 70px
+	&__prices
+		margin: 0
+		padding: 0
+		display: flex
+		justify-content: space-between
+
+.price
+	border: 5px solid $gold
+	border-radius: 10px
+	width: 30%
+	position: relative
+	&__flag 
+		position: absolute
+		top: -25px
+		left: 17%
+		display: flex
+		justify-content: center
+		align-items: flex-end
+		width: 66%
+		height: 30px
+		background-color: $gold
+		font-size: em(18)
+		font-weight: bold
+		color: #e11a27
+		text-transform: uppercase
+		&::after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			border-top: 20px solid #fff
+			border-right: 20px solid $gold
+		&::before 
+			content: ""
+			position: absolute
+			top: 0
+			right: 0
+			border-top: 20px solid #fff
+			border-left: 20px solid $gold
+	&__link
+		height: 100%
+	&__wrapper
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding-top: 20px
+		min-height: 254px
+	&__list
+		margin: 0
+		padding-left: 20px
+		padding-right: 20px
+		color: #000
+		font-size: em(18)
+		font-weight: 600
+	&__item
+		position: relative
+		margin-bottom: 13px
+		margin-left: 40px
+		&:before
+			content: ""
+			position: absolute
+			display: block
+			+sprite($checked-icon)
+			left: -37px
+	&__name
+		text-align: center
+		font-size: em(36)
+		font-variant: small-caps
+		letter-spacing: 3px
+		color: #000
+		background-color: $gold
+		margin: 0
+		padding:
+			top: 30px
+			bottom: 30px
+	&__value
+		display: block
+		text-align: center
+		font-size: em(60)
+		color: #000
+	&__btn
+		display: block
+		background-color: $gold
+		text-align: center
+		padding-top: 10px
+		padding-bottom: 10px
+		margin-top: 10px
+		font-size: em(22)
+		font-weight: 100
+		color: #000
+
+.testimonials
+	min-width: 430px
+	background:
+		color: #f5eee4
+		// color: $gold
+		image: url(../img/main-banner2.png)
+		size: 100% 100%
+		repeat: no-repeat
+		position: right
+	&__wrapper
+		padding:
+			left: 3%
+			right: 3%
+			bottom: 50px
+		margin: 0 auto
+		max-width: 1079px
+		// background: 
+		// 	image: url(../img/main-banner2.png)
+		// 	size: 100%
+		// 	repeat: no-repeat
+		// 	position: right center
+	&__title
+		font-size: em(60)
+		font-weight: 100
+		font-variant: small-caps
+		margin: auto
+		padding:
+			top: 30px
+			bottom: 45px
+	&__user
+		max-width: 500px
+		display: flex
+		align-items: center
+		&-avatar
+			margin-right: 30px
+		&-name
+			font-size: em(30)
+			margin: 0 0 10px 5px
+		&-job
+			font-size: em(18)
+			margin-top: 5px
+	&__text
+		width: 50%
+	&__next
+		margin-top: 35px
+		margin-bottom: 130px
+		position: relative
+		display: block
+		width: 165px
+		margin-left: 33%
+		color: #000
+		&::after
+			content: ""
+			position: absolute
+			background: url(../img/next-arrow.svg) no-repeat
+			width: 26px
+			height: 3px
+			top: 8px
+			right: 0px
+	&__btn
+		display: block
+		width: 40%
+		text-align: center
+		padding: 20px 0
+		font-size: em(26)
+		font-weight: 100
+		color: #212121
+		text-decoration: none
+		text-transform: uppercase
+		border: 1px solid #212121
+		border-radius: 10px
+		margin-left: 2em
+		&:hover
+			border: 1px solid #FF7100
+			color: #FF7100
+
+.info
+	&__wrapper
+		padding:
+			top: 90px
+			bottom: 120px
+		margin: 0 auto
+		max-width: 1079px
+	&__list
+		margin: 0
+		padding: 0
+		display: flex
+		justify-content: space-between
+	&__title
+		border-top-left-radius: 10px
+		border-top-right-radius: 10px
+		background-color: $gold
+		text-align: center
+		margin: 0
+		font-size: em(36)
+		font-weight: 100
+		padding: 15px 0
+		font-variant: small-caps
+		margin-bottom: 6px
+	&-terms
+		width: 30%
+		&__content
+			background-color: #f7f0e6
+			border-bottom-left-radius: 10px
+			border-bottom-right-radius: 10px
+			padding: 30px 36px 0
+			min-height: 236px
+			&-text
+				margin: 0
+				padding-bottom: 10px
+	&-payment
+		width: 30%
+		&__wrap
+			@extend .info-terms__content
+		&__list
+			padding:
+				top: 12px
+				left: 30px
+			&-item
+				list-style-type: disc
+				padding-bottom: 12px
+	&-shipping
+		width: 30%
+		&__wrap
+			@extend .info-terms__content
+		&__text
+			margin: 0
+			padding-bottom: 10px
+			&--attention
+				font-size: em(18)
+				font-weight: bold
+				color: $button
+				font-variant: small-caps
+.main-footer
+	background-color: $gold
+	&__wrapper
+		padding-top: 50px
+		padding-bottom: 50px
+		max-width: 1079px
+		margin: 0 auto
+	&__inner
+		display: flex
+		justify-content: space-between
+		margin-bottom: 35px
+	&__container
+		display: flex
+	&__list
+		margin: 0
+		padding: 28px 0 0 0
+		width: 150px
+		margin-right: 80px
+		border-top: 2px solid #000
+		&:last-child
+			margin-right: 0
+		&-item
+			margin: 0
+			padding-bottom: 13px
+		&-link
+			color: #000
+			font-size: em(18)
+			font-weight: bold
+			&:hover
+				border-bottom: 1px solid #000
+			&--caps
+				font-variant: small-caps
+	&__copyright
+		display: block
+		text-align: center
+		font-weight: bold
+		font-size: em(14)
+
+.social
+	&__list
+		width: 150px
+		border-top: 2px solid #000
+		margin: 0
+		padding: 28px 0 0 0
+		display: flex
+	&__item
+		margin-right: 20px
+		margin-bottom: 50px
+		&:hover
+			cursor: pointer
+		&--facebook
+			+sprite ($fb-icon)
+		&--vk
+			+sprite ($vk-icon)
+		&--instagram
+			+sprite ($instagram-icon)
+
+
+@media (max-width: 1170px) and (min-width: 700px)
+	.promo__btn
+		width: 45%
+		font-size: em(20)
+	
+@media (max-width: 1170px)
+	.advantage
+		&__list
+			flex-wrap: wrap
+			justify-content: space-around
+		&-item
+			margin-right: 40px
+			margin-bottom: 70px
+			&:last-child
+				// margin-right: 0
+				margin-bottom: 0
+	.info__list
+		flex-wrap: wrap
+		justify-content: space-around
+	.info
+		&-terms
+			width: 35%
+			margin-bottom: 70px
+		&-payment
+			width: 35%
+			margin-bottom: 70px
+		&-shipping
+			width: 35%
+	.main-footer
+		&__inner
+			padding:
+				left: 3%
+				right: 3%
+			flex-wrap: wrap
+			flex-direction: column
+		&__container
+			margin: 0 auto
+			padding-bottom: 70px
+		&__social
+			margin: 0 auto
+			display: flex
+			flex-direction: column
+	.social
+		&__list
+			justify-content: space-around
+		&__item
+			&:last-child
+				margin-right: 0
+	.copyright__logo
+		margin: 0 auto
+		
+
+@media (max-width: 980px)
+	.solutions__prices
+		flex-wrap: wrap
+		justify-content: space-around
+	.price
+		width: 40%
+		margin-bottom: 70px
+		&:last-child
+			margin-bottom: 0
+	.advantage__btn
+		min-width: 45%
+		font-size: em(23)
+	.testimonials
+		background-image: none
+		&__title
+			text-align: center
+		&__user
+			width: 70%
+			margin: 0 auto
+			padding-bottom: 30px
+			&-avatar
+				width: 30%
+			&-name
+				font-size: em(24)
+			&-job
+				font-size: em(16)
+		&__text
+			width: 500px
+			margin: 0 auto 20px
+		&__next
+			margin-top: 55px
+			width: 160px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 100px
+		&__btn
+			width: 330px
+			margin-left: auto
+			margin-right: auto
+
+
+@media (max-width: 700px)
+	.promo__btn
+		width: 70%
+		font-size: em(20)
+	.steps__list
+		flex-wrap: wrap
+		justify-content: space-around
+		padding: 0 3px
+		&::before
+			display: none
+	.step
+		min-width: 215px
+		&:nth-child(-n+2)
+			padding-bottom: 50px
+		&__title
+			font-size: em(19)
+			font-weight: bold
+	.price
+		width: 80%
+		margin: 0 20% 70px
+		&:last-child
+			margin-bottom: 0
+	.advantage__btn
+		min-width: 65%
+		font-size: em(23)
+	.testimonials__text
+		width: 70%
+	.info
+		&-terms
+			width: 55%
+		&-payment
+			width: 55%
+		&-shipping
+			width: 55%
+	.main-footer
+		&__container
+			width: 90%
+		&__list
+			margin-right: 10%
+			&:last-child
+				margin-right: 0
+
+
+@media (max-width: 480px)
+	.steps__list
+		flex-wrap: wrap
+	.step
+		padding-bottom: 50px
+		&:last-child
+			padding-bottom: 0
+	.advantage__btn
+		min-width: 70%
+		font-size: em(23)
+		&--info
+			min-width: 305px
+	.info
+		&-terms
+			width: 67%
+		&-payment
+			width: 67%
+		&-shipping
+			width: 67%
+	.main-footer
+		&__container
+			flex-wrap: wrap
+			text-align: center
+		&__list
+			width: 51%
+			margin: 0 auto
+			margin-bottom: 40px
+			&:last-child
+				margin: 0 auto
+
+.hamburger 
+	width: 25px
+	height: 18px
+	position: relative
+	// display: block
+	margin-right: 23%
+
+@media(min-width: 700px) and(max-width: 1170px) 
+	.main-header__row 
+		width: 30%
+	.main-header__phone 
+		margin-right: 10%
+
+@media(max-width: 700px) 
+	.main-header__row 
+		width: 50%
+		justify-content: flex-end
+	.main-header__phone 
+		display: none
+	.advantage-item
+		margin:
+			top: 0
+			left: 40px
+			right: 40px
+			// bottom: 30px
+		// width: 51%
+
+
+// @import "media" // Всегда в конце
